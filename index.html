@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+    <title>C documentation</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="sidebar">
+      <!--Side bar implementation-->
+      <nav id="navbar">
+        <header id="header">C Documentation</header>
+        <ul id="sidebar">
+          <li class="nav-link-li"><a class="nav-link" href="#Introduction">Introduction</a></li>
+          <li class="nav-link-li"><a class="nav-link" href="#Syntax">Syntax</a></li>
+          <li class="nav-link-li"><a class="nav-link" href="#Libraries">Libraries</a></li>
+          <li class="nav-link-li"><a class="nav-link" href="#Strings">Strings</a></li>
+          <li class="nav-link-li"><a class="nav-link" href="#Dynamic_Programming">Dynamic Programming</a></li>
+          <li class="nav-link-li"><a class="nav-link" href="#Linked_Lists">Linked Lists</a></li>
+        </ul>
+      </nav>
+    </div>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+          <header>Introduction</header>
+          <p>C is an imperative, procedural language in the ALGOL tradition. It has a static type system. In C, all executable code is contained within subroutines (also called "functions", though not in the sense of functional programming). Function parameters are passed by value, although arrays are passed as pointers, i.e. the address of the first item in the array. Pass-by-reference is simulated in C by explicitly passing pointers to the thing being referenced.</p>
+          <p>C program source text is free-form code. Semicolons terminate statements, while curly braces are used to group statements into blocks.</p>
+          <p>The C programming language also exhibits the following characteristics when it comes to functions:</p>
+          <ul>
+            <li>Function return values can be ignored, when not needed.</li>
+            <li>Function and data pointers permit ad hoc run-time polymorphism.</li>
+            <li>Functions may not be defined within the lexical scope of other functions.
+</li>
+            <li>Variables may be defined within a function, with scope.
+</li>
+            <li>A function may call itself, so recursion is supported.
+</li>
+          </ul>
+        </section>
+        <section class="main-section" id="Syntax">
+        <header>Syntax</header>
+        <p>The syntax of C is very simple. The following rules apply:
+          <ul>
+            <li><code>#include &lt;stdio.h&gt;</code> is an example line of code showing how to import libraries in C. This is usually done near the top of your file. If you are unsure what libraries are, please check the "Libraries" section of the documentation page.</li>
+            <li>A blank line is ignored by C. So it is used to organize the code and make it more readable.</li>
+            <li>Another thing that always appear in a C program, is <code>main()</code>. This is called a function. Any code inside its curly brackets <code>{}</code> will be executed.</li>
+            <li><code>printf()</code> is a function used to output/print text to the console.</li>
+            <li>Every statement in C ends with a semicolon (e.g. <code>printf(%d, number);</code>).</li>
+            <li><code>return 0</code> ends the main function.</li>
+          </ul>
+        </p>
+        </section>
+        <section class="main-section" id="Libraries">
+          <header>Libraries</header>
+          <p>Here are a few libraries that you can use when programing in C. Remember, in order to import them into your file, you must use the <code>#include</code> statement.</p>
+          <table>
+            <tr id="title-head-for-table">
+              <td>Name</td>
+              <td>From</td>
+              <td>Description</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;assert.h&gt;</code></td>
+              <td></td>
+              <td>Declares the assert macro, used to assist with detecting logical errors and other types of bugs while debugging a program</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;complex.h&gt;</code></td>
+              <td>C99</td>
+              <td>Defines a set of functions for manipulating complex numbers.
+</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;ctype.h&gt;</code></td>
+              <td></td>
+              <td>Defines set of functions used to classify characters by their types or to convert between upper and lower case in a way that is independent of the used character set (typically ASCII or one of its extensions, although implementations utilizing EBCDIC are also known).</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;errno.h&gt;</code></td>
+              <td></td>
+              <td>For testing error codes reported by library functions.
+</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;fenv.h&gt;</code></td>
+              <td>C99</td>
+              <td>Defines a set of functions for controlling floating-point environment.</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;math.h&gt;</code></td>
+              <td></td>
+              <td>Defines common mathematical functions.
+</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;stdbool.h&gt;</code></td>
+              <td>C99</td>
+              <td>Defines a Boolean data type.
+</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;stdio.h&gt;</code></td>
+              <td></td>
+              <td>Defines core input and output functions
+</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;stdlib.h&gt;</code></td>
+              <td></td>
+              <td>Defines numeric conversion functions, pseudo-random numbers generation functions, memory allocation, process control functions</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;string.h&gt;</code></td>
+              <td></td>
+              <td>Defines string-handling functions</td>
+            </tr>
+            <tr id="library">
+              <td><code>&lt;time.h&gt;</code></td>
+              <td></td>
+              <td>Defines date- and time-handling functions</td>
+            </tr>
+          </table>
+        </section>
+        <section class="main-section" id="Strings">
+          <header>Strings</header>
+          <p>Strings in C are unique as they do not have their own specified data type. Instead, they are implemented as character arrays.</p>
+          <p>To declare a C-string, you must use the syntax listed: 
+            <br><br><code class="c-string-code">char name[number];</code><br><br>
+            The <code>char</code> is to declare a character type. The <code>name</code> can be any name of your choice and is to identify this specific type. The <code>number</code> can be any positive number and is meant to initialize an character array of the given number.
+          </p>
+          <p>Each string's last index will contain a null-terminating character (<code>'\0'</code>) so when initializing a string, make sure to add space for one more character in order to include the null-terminating character. Otherwise, undefined behavior can occur.</p>
+          <p>if you include the <code>&lt;string.h&gt;</code> library, you can use functions made specifically for strings like <code>strcpy(), strcat(), strcmp(), etc.</code></p>
+        </section>
+        <section class="main-section" id="Dynamic_Programming">
+          <header>Dynamic Programming</header>
+          <p>Dynamic programming is a technique used in computer science and mathematics to solve problems by breaking them down into smaller overlapping subproblems and solving each subproblem only once, storing the solutions to subproblems in a table to avoid redundant computations. This helps improve the efficiency of the algorithm. An example of this is recursion.</p>
+          <div class="code-block">
+            <pre>
+              <code>
+<span class="data-type">int</span> fib(<span class="data-type">int</span> n) {
+  <span class="syntax">if</span> (n &lt= <span class="number">1</span>) {
+    <span class="syntax">return</span> n;
+  }
+  <span class="syntax">return</span> fib(n-<span class="number">1</span>) + fib(n-<span class="number">2</span>);
+}</code>
+            </pre>
+          </div>
+          <p>Dynamic programming allows programmers to break down tasks into smaller problems in order to solve for something bigger!</p>
+        </section>
+        <section class="main-section" id="Linked_Lists">
+          <header>Linked Lists</header>
+          <p>A linked list is a linear data structure in which elements are stored in nodes, and each node points to the next node in the sequence. Unlike arrays, linked lists do not have a fixed size, and their elements (nodes) are not stored in contiguous memory locations. Instead, each node contains data and a reference (or link) to the next node in the sequence.</p>
+          <p>To create a node, you must create a new struct: </p>
+          <div class="code-block">
+            <pre>
+<code>
+<span class="syntax">struct</span> Node {
+  <span class="data-type">int</span> data;
+  Node* next;
+}</code>
+            </pre>
+          </div>
+          <p>You can then use these nodes to link data types together, kind of like a chain. The pros of using a linked-list is that it can be dynamically adjusted in terms of memory allocation. To allocate more memory for the linked list, you simply just create another node and have the previous node point to the new node. The cons of a linked-list is that search algorithms aren't made for these data types. It is always a linear search to traverse through a linked-list.</p>
+        </section>
+    </main>
+  </body>
+</html>
